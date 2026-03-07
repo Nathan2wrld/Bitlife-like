@@ -1,0 +1,115 @@
+#started 3/05/2026
+
+import random
+# gallerie des noms
+prenoms = ["Alex", "Jordan", "Emily", "Noah", "Sofia", "Liam", "Ava", "Ethan"]
+noms = ["Smith", "Johnson", "Brown", "Martin", "Lee", "Wilson", "Clark"]
+prenoms_mere = ["Emma", "Justine", "Irene", "Annie", "Vanessa", "Jess"]
+prenoms_pere = ["Alex", "Jordan", "Noah", "Liam", "Ethan"]
+animal_name = ["Rex", "Bulldog", "Arrache", "Joe"]
+
+#stats
+argent = 0
+age = 0
+karma = random.randint(1, 100)
+Esp_life = random.randint(1, 50)# petit a petit esperence de vie
+happiness = random.randint(1, 100)
+health = random.randint(1, 100)
+intelligence = random.randint(1, 100)
+look = random.randint(1, 100)
+popularity = 0
+studies= ""#stat de niveau scolaire
+
+name = ""
+
+# choix du nom
+naming=str(input("if you want to choose your name, then print 'C' and if you want a random name, print 'R' "))
+
+if naming == 'c' or naming == 'C':
+    first_name=str(input("what is your first name?"))
+    last_name=str(input("what is your last name?"))
+    name = first_name + " " + last_name
+    print(name)
+elif naming == 'r' or naming == 'R':
+    first_name = random.choice(prenoms)
+    last_name = random.choice(noms)
+    name = first_name + " " + last_name
+    print(name)
+    
+father_name = random.choice(prenoms_pere) +" "+ last_name# nom de papa
+mother_name = random.choice(prenoms_mere) +" "+ last_name# nom de mama
+animal = random.choice(animal_name)# nom animal
+
+
+def affichage():#fonction affichage ecran principal
+    print(f"""
+________________________________________________________
+    {name}
+    
+    money= {argent}$
+    age= {age} years-old
+___________________________________________________________
+    1. job   |  2. assets  | 3. relations |  4. activities
+_____________|_____________|______________|_________________
+    happiness: {happiness}/100
+    health: {health}/100
+    intelligence: {intelligence}/100
+    look: {look}/100
+    popularity: {popularity}/100
+    """)
+    
+def relations():# fonction du menu relations
+    rel=input((f"""
+    1. {father_name} (father)
+    
+    2. {mother_name} (mother)
+    
+    3. {animal} (animal)
+
+    back--> 'b'
+    """))
+    if rel=="1":#menu pere
+        pass
+    elif rel=="2":#menu mere
+        pass
+    elif rel=="3":#menu animal
+        pass
+    elif rel=="b":#back
+        affichage()
+
+def job():# fonction du menu job
+    print("""
+
+""")
+
+#boucle principale du jeu
+while True:
+    if age == 5:# debut ecole primaire
+        print("""
+
+       you just started elementary school
+
+        """)
+        studies = "e.school"
+    affichage()
+
+    menu=(input("""chose one menu between 1 and 4
+    or get a year older by tapping the touch 'space'""" ))# choisir le menu
+
+
+    if menu == " ":#grandir d'une annee
+        age+=1
+        continue
+    
+    if menu == "1":#menu job
+        if age < 5:#si tu n'as pas au moins 5 ans, tu ne commence pas l'ecole
+            print(f"""
+            you are not old enough
+            """)
+            continue
+        elif studies=="e.school":
+            job()
+
+    if menu == "3":# affichage menu 3
+        relations()
+    
