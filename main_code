@@ -1,17 +1,20 @@
 #started 3/05/2026
+print("l'objectif de ce jeu est de vivre le plus longtemps possible en faisant les meilleurs choix possibles et en gardant la sante et le bonheur au plus haut possible. C'est l'heure de vivre ta meilleur vie , ou bien ta pire.")
 
 import random
 # gallerie des noms
 prenoms = ["Alex", "Jordan", "Emily", "Noah", "Sofia", "Liam", "Ava", "Ethan"]
-noms = ["Smith", "Johnson", "Brown", "Martin", "Lee", "Wilson", "Clark"]
+noms = ["Smith", "Johnson", "Brown", "Martin", "Lee", "Wilson", "Clark", "Kenfack", "Donfack", "Kadji"]
 prenoms_mere = ["Emma", "Justine", "Irene", "Annie", "Vanessa", "Jess"]
 prenoms_pere = ["Alex", "Jordan", "Noah", "Liam", "Ethan"]
-animal_name = ["Rex", "Bulldog", "Arrache", "Joe"]
+animal_name = ["Rex", "Bulldog", "Arrache", "Joe", "Guiness"]
 
 #dates de naissance
 date = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
 month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 february_date = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"]
+#pour le menu asset
+ass=["car", "TV", "boat", "lock", "text", "phone", "pant", "T-shirt", "doll", "shampoo"]
 
 r_money = random.randint (1, 100000)
 
@@ -29,6 +32,9 @@ intelligence = random.randint(1, 100)
 look = random.randint(1, 100)
 popularity = 0
 grade_1 = random.randint(1, 100)# niveau scolaire au primaire
+grade_2 = random.randint(1, 100)# niveau scolaire au middle school
+grade_3 = random.randint(1, 100)# niveau scolaire au high school
+grade_4 = random.randint(1, 100)# niveau scolaire a l'universite
 
 #esperence de vie du pere et de la mere et de l'animal
 vie_pere = random.randint(1, 50)
@@ -260,8 +266,197 @@ ______________________________
     
     elif e_choice == "b":
         return
+    
+#rendre la fonction du menu job_2 plus "High School"
+def job_2():#fonction du menu job pour le middle school
+    global grade_2, intelligence
+    print(f"""
+--------JOB/ SCHOOL-----------
+grade= {grade_2}/100
+______________________________
+1. study harder
+______________________________
+2. escape from school
+______________________________
+3. Joke during classes
+______________________________
+b. Main Menu
+______________________________
+""")
+    e_choice=input(">")
 
-        
+    if e_choice == "1" and (grade_2 < 100 or intelligence < 100):
+        print(f"\n YOU DECIDED TO STUDY HARDER IN SCHOOL\n")
+        grade_2 = min(100, grade_2 + random.randint(0, 10))
+        intelligence = min(100, intelligence + random.randint(0, 5))
+        if grade_2 == 100:
+            print(f"\n WHY DO YOU WANT TO STUDIE, YOU GENIUS?\n")
+    elif e_choice == "2":
+        print(f"\n YOU DECIDED TO ESCAPE FROM THE SCHOOL\n")
+        grade_2 = max(0, grade_2 - random.randint(1, 5))
+    elif e_choice == "3":
+        print(f"\n YOU DECIDED TO JOKE DURING CLASSES\n")
+        grade_2 = max(0, grade_2 - random.randint(1, 5))
+        intelligence = max(0, intelligence - random.randint(1, 5))
+    elif e_choice == "b":
+        return
+    
+def job_3():#fonction du menu job pour le high school
+    global grade_3, intelligence
+    print(f"""
+--------JOB/ SCHOOL-----------
+grade= {grade_3}/100   
+______________________________
+1. study harder
+______________________________
+2. escape from school
+______________________________
+3. Joke during classes
+______________________________
+b. Main Menu
+______________________________
+""")
+    e_choice=input(">")
+
+    if e_choice == "1" and (grade_3 < 100 or intelligence < 100):
+        print(f"\n YOU DECIDED TO STUDY HARDER IN SCHOOL\n")
+        grade_3 = min(100, grade_3 + random.randint(0, 10))
+        intelligence = min(100, intelligence + random.randint(0, 5))
+        if grade_3 == 100:
+            print(f"\n WHY DO YOU WANT TO STUDIE, YOU GENIUS?\n")
+    elif e_choice == "2":
+        print(f"\n YOU DECIDED TO ESCAPE FROM THE SCHOOL\n")
+        grade_3 = max(0, grade_3 - random.randint(1, 5))
+    elif e_choice == "3":
+        print(f"\n YOU DECIDED TO JOKE DURING CLASSES\n")
+        grade_3 = max(0, grade_3 - random.randint(1, 5))
+        intelligence = max(0, intelligence - random.randint(1, 5))
+    elif e_choice == "b":
+        return
+
+def job_4():#fonction du menu job pour l'universite
+    global grade_4, intelligence
+    print(f"""
+--------JOB/ SCHOOL-----------
+grade= {grade_4}/100
+______________________________
+1. study harder
+______________________________
+2. escape from school
+______________________________
+3. Joke during classes
+______________________________
+b. Main Menu
+______________________________
+""")
+    e_choice=input(">")
+
+    if e_choice == "1" and (grade_4 < 100 or intelligence < 100):
+        print(f"\n YOU DECIDED TO STUDY HARDER IN SCHOOL\n")
+        grade_4 = min(100, grade_4 + random.randint(0, 10))
+        intelligence = min(100, intelligence + random.randint(0, 5))
+        if grade_4 == 100:
+            print(f"\n WHY DO YOU WANT TO STUDIE, YOU GENIUS?\n")
+    elif e_choice == "2":
+        print(f"\n YOU DECIDED TO ESCAPE FROM THE SCHOOL\n")
+        grade_4 = max(0, grade_4 - random.randint(1, 5))
+    elif e_choice == "3":
+        print(f"\n YOU DECIDED TO JOKE DURING CLASSES\n")
+        grade_4 = max(0, grade_4 - random.randint(1, 5))
+        intelligence = max(0, intelligence - random.randint(1, 5))
+    elif e_choice == "b":
+        return
+
+def assets():#assets et ajouter le fait que tu peux rater ton cambriolage et etre emprisone
+    global argent, happiness, health, intelligence, ass
+    rob=random.randint(0, 100)
+    
+    ass1=random.choice(ass)
+    print("""
+
+------ASSETS------------------
+
+1. buy something
+_____________________________
+2. sell something
+_____________________________          
+3. hang out with your bicycle
+_____________________________          
+4. play some music
+_____________________________
+5. listen music
+_____________________________
+6. rob someone's house
+_____________________________
+b. back
+""")
+    assets_c=input(">")
+    if assets_c=='1':
+        print(f"\n YOU BOUGHT A {ass1}\n")
+        argent-=random.randint(0, 100)
+    elif assets_c=='2':
+        print(f"\n YOU SOLD A {ass1}\n")
+        argent+=random.randint(0,100)
+    elif assets_c=='3':
+        print(f"\n YOU MADE A TIME OUT \n")
+        happiness=min(100, happiness + random.randint(0, 10))
+        health=min(100, health + random.randint(0, 10))
+    elif assets_c=='4':
+        print("\n YOU PLAYED SOME MUSIC \n")
+        intelligence=min(100, intelligence + random.randint(0, 10))
+        happiness=min(100, happiness + random.randint(0, 10))
+    elif assets_c=='5':
+        print("\n YOU LISTENED SOME MUSIC \n")
+        intelligence=min(100, intelligence + random.randint(0, 10))
+        happiness=min(100, happiness + random.randint(0, 10))
+    elif assets_c=='6':
+        print(f"\n YOU ROBBED SOMEONE HOUSE AND GAIN ${rob} \n")
+        argent+=rob
+        health=max(0, health - random.randint(0, 10))
+        happiness=max(0, happiness - random.randint(0, 10))
+        intelligence=min(100, intelligence + random.randint(0, 10))
+    elif assets_c=='b':
+        return
+def activities():#fonction du menu activities
+    global happiness, health, intelligence, look, popularity, argent
+    print(f"""
+        --------ACTIVITIES-------------
+
+        1. go to the gym
+        ________________________________
+        2. go to the cinema
+        ________________________________
+        3. go to the park
+        ________________________________
+        4. go to the restaurant
+        ________________________________
+        b. back
+
+        """)
+    activity_choice = input(">")
+    if activity_choice == "1":
+        print(f"\n YOU WENT TO THE GYM\n")
+        health = min(100, health + random.randint(0, 10))
+        look = min(100, look + random.randint(0, 10))
+        happiness = min(100, happiness + random.randint(0, 10))
+        argent = argent - random.randint(0, 20)
+    elif activity_choice == "2":
+        print(f"\n YOU WENT TO THE CINEMA\n")
+        happiness = min(100, happiness + random.randint(0, 10))
+        intelligence = min(100, intelligence + random.randint(0, 5))
+        argent = argent - random.randint(0, 20)
+    elif activity_choice == "3":
+        print(f"\n YOU WENT TO THE PARK\n")
+        health = min(100, health + random.randint(0, 10))
+        happiness = min(100, happiness + random.randint(0, 10))
+    elif activity_choice == "4":
+        print(f"\n YOU WENT TO THE RESTAURANT\n")
+        health = max(0, health - random.randint(0, 10))
+        happiness = min(100, happiness + random.randint(0, 10))
+        argent = argent - random.randint(0, 30)
+    elif activity_choice == "b":
+        return
+
 #boucle principale du jeu
 while True:
     affichage()
@@ -345,15 +540,39 @@ while True:
             you are not old enough
             """)
             continue
-        elif studies=="e.school":
+
+        elif studies=="e.school":#faire les niveaux superieurs
             job_1()
+
+        elif studies=="m.school":
+            job_2()
+        elif studies=="h.school":
+            job_3()
+        elif studies=="u.school":
+            job_4()
+
+    if menu == "2":#menu assets
+        if age < 5:
+            print(f"""
+            you are not old enough
+            """)
+            continue
+        else:
+            assets()
 
     if menu == "3":# affichage menu 3
         relations()
+    if menu == "4":# affichage menu 4
+        if age < 5:
+            print(f"""
+            you are not old enough
+            """)
+            continue
+        else:
+            activities()
 
     #enfin, la mort
     if health <= 0 or age >= Esp_life:
-        print(f"GAME OVER. {name} est mort à {age} ans.")
+        print(f"GAME OVER. {name} est mort(e) à {age} ans. Il/elle a vécu une vie avec un niveau de bonheur de {happiness}/100, une santé de {health}/100, une intelligence de {intelligence}/100, un look de {look}/100 et une popularité de {popularity}/100. Merci d'avoir joué! Quelle chance, vous pouvez recommencer une nouvelle partie et essayer de faire mieux cette fois-ci!")
         break
     
-
